@@ -53,8 +53,8 @@ int main(int argc, char* argv[])
         std::cout << rand[i];
       }
     }
-  sleep(10000);
-  std::cout << "\n";
+  sleep(20000);
+  std::cout << "\r" << std::flush;
   }
   std::cout << gend << std::endl;
 }
