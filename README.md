@@ -5,4 +5,5 @@ it basically keeps generating random chars until it gets to your target string (
 INSTALL INSTRUCTIONS
 --------------------
 make
+
 sudo make install
