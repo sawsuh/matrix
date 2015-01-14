@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
   std::string gend = random_string(targlen);
   for (int i=0; i < targlen; i++)
   {
-    gend[i]='o';
+    gend[i]='.';
   }
   std::string rand;
   while (gend != targ)
@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
     }
     for (int i=0; i < targlen; i++)
     {
-      if (gend[i] != 'o' || gend[i] == ' ')
+      if (gend[i] != '.')
         {
           std::cout << gend[i];
         }
