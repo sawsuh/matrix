@@ -27,12 +27,13 @@ void randgen (size_t length, char* arr, char *randchar)
 {
   for (int i = 0; i != length; i++)
   {
-    *(i + arr) = *(randchar + (rand() % 62));           //generate random character in that space
+    *(i + arr) = *(randchar + (rand() % 63));           //generate random character in that space
   }
 }
 int main(int argc, char* argv[])
 {
   char randchar[] = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM ";
+  //memset(randchar + 62, ' ', 1);
   std::string targ1 = argv[1];
   char *targ = (char*)targ1.c_str();
   size_t targlen = targ1.length();
