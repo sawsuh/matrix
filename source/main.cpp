@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <algorithm>
 #include <time.h>
 #include <cstring>
@@ -8,21 +7,6 @@ void sleep (unsigned int mseconds)
   clock_t goal = mseconds + clock();
   while (goal > clock());
 }
-/* std::string random_string (size_t length)           THIS IS THE STRING VERSION, WHICH I REMOVED WHEN I SWITCHED IT 
-{                                                      TO CHARS
-  auto randchar = []() -> char
-  {
-    const char charset[] = 
-      "0123456789"
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-      " abcdefghijklmnopqrstuvwxyz";
-      const size_t max_index = (sizeof(charset) - 1);
-      return charset [ rand() % max_index ];
-  };
-  std::string str(length,0);
-  std::generate_n( str.begin(), length, randchar );
-  return str;
-} */
 void randgen (size_t length, char* arr, char *randchar)
 {
   for (int i = 0; i != length; i++)
@@ -33,10 +17,9 @@ void randgen (size_t length, char* arr, char *randchar)
 int main(int argc, char* argv[])
 {
   char randchar[] = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM ";
-  //memset(randchar + 62, ' ', 1);
-  std::string targ1 = argv[1];
-  char *targ = (char*)targ1.c_str();
-  size_t targlen = targ1.length();
+  char *targ = (char*)argv[1];
+  char *ptr = &targ[0];
+  size_t targlen = strlen(ptr);
   char gend[targlen];
   randgen(targlen, gend, randchar);
   char rand[targlen];
