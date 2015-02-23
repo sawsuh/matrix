@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <time.h>
 #include <cstring>
+#include <stdexcept>
+#include <cstdlib>
 void sleep (unsigned int mseconds)
 {
   clock_t goal = mseconds + clock();
@@ -16,6 +18,17 @@ void randgen (size_t length, char* arr, char *randchar)
 }
 int main(int argc, char* argv[])
 {
+  try{
+    if (strlen(argv[1]) >= 8)
+    {
+      throw std::runtime_error("the program won't complete if the string is 8 characters or greater");
+    }
+  }
+  catch (std::runtime_error err)
+  {
+    std::cout << err.what() << std::endl;
+    exit(1);
+  }
   char randchar[] = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM ";
   char *targ = (char*)argv[1];
   char *ptr = &targ[0];
