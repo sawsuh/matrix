@@ -22,8 +22,8 @@ int main(int argc, char* argv[])
     if (strlen(argv[1]) >= 8)
     {
       throw std::runtime_error("the program won't complete if the string is 8 characters or greater");
-    }
-  }
+    }     //make it return error and exit if string was greater than 7 chars
+  }       //this is because it stuffs up when that happens (i dont know why)
   catch (std::runtime_error err)
   {
     std::cout << err.what() << std::endl;
